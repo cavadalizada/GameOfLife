@@ -29,7 +29,6 @@ int nbAliveNeighbors(int i, int j){
     if(arr[i+1][j+1]){
         nb++;           // bottom-right
     }
-
     return nb;
 }
 
@@ -38,7 +37,7 @@ int emerge(bool state, int i, int j){
     if(state == 0){
 
         if(nbAliveNeighbors(i,j) == 3){
-            arr[i][j] == 1;
+            arr1[i][j] = 1;
         }
     
     
@@ -67,19 +66,19 @@ int die(bool state, int i, int j){
 
 }
 
-void print(){
+void print(bool arrPrint[WIDTH-1][LENGTH-1]){
 
 
 printf("********** CONWAY'S GAME OF LIFE *************** \n");
 
     printf("       0  1  2  3  4  5  6  7  8  9  10\n");
-    for(int i = 0;i < 11;i++){
+    for(int j = 0;j < LENGTH;j++){
 
-        printf("    %d| ",(i==10)? 0 : i);
+        printf("    %d| ",(j==10)? 0 : j);
 
-        for(int j = 0;j < 11;j++){
+        for(int i = 0;i < WIDTH;i++){
 
-            printf("%d  ",arr[i][j]);    
+            printf("%d  ",arrPrint[i][j]);    
 
         }
         printf("\n");
@@ -89,10 +88,30 @@ printf("********** CONWAY'S GAME OF LIFE *************** \n");
 
 }
 
-int main(){
+int game(){
     
 
-    print();        
+    arr[10][7]=1;
+    arr[8][7]=1;
+    arr[10][9]=1;
+
+        for(int i = 0;i < 11;i++){
+        for(int j = 0; j < 11;j++){
+        arr1[i][j] = arr[i][j];
+        }}
+    print(arr);        
+
+    for(int i = 0;i < 11;i++){
+        for(int j = 0; j < 11;j++){
+        emerge(arr[i][j],i,j);
+        }
+    }
+        for(int i = 0;i < 11;i++){
+        for(int j = 0; j < 11;j++){
+        arr[i][j] = arr1[i][j];
+        }
+    }
+    print(arr);        
 
     return 0;
 }

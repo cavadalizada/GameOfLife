@@ -2,11 +2,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool arr[10][10]; 
+#define WIDTH 11
+#define LENGTH 11
+
+bool arr[WIDTH-1][LENGTH-1]; 
+bool arr1[WIDTH-1][LENGTH-1]; 
+
 /* 
+   i -->
+ j
+ |
+ v
      emerge
 before ==> after
-0 1 2 3 4 5 6 7 . . .
+0 1 2 3 4 5 6 7 . . . 
 0 + - + - + - +
 1 - - - - - + -   
 2 - - + - - - +
