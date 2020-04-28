@@ -54,7 +54,7 @@ int die(bool state, int i, int j){
 
     if(state == 1){
 
-        arr[i][j]=0;
+        arr1[i][j]=0;
     
         return 0;
     
@@ -91,27 +91,31 @@ printf("********** CONWAY'S GAME OF LIFE *************** \n");
 int game(){
     
 
-    arr[10][7]=1;
-    arr[8][7]=1;
-    arr[10][9]=1;
-
-        for(int i = 0;i < 11;i++){
-        for(int j = 0; j < 11;j++){
-        arr1[i][j] = arr[i][j];
-        }}
-    print(arr);        
-
     for(int i = 0;i < 11;i++){
         for(int j = 0; j < 11;j++){
-        emerge(arr[i][j],i,j);
+            if(arr[i][j] == 0){                 // if dead
+                if(nbAliveNeighbors(i,j) == 3){ // if 3 neighbors also alive
+                    emerge(arr[i][j],i,j);      // emerge
+                    continue;                   // go next cell
+                }
+            }                                   // endif dead
+            if(arr[i][j] == 1){                 // if alive
+                if(nbAliveNeighbors(i,j) == 2 || nbAliveNeighbors(i,j) == 3){ //if number of neighbors alive is not 2 or 3
+                                                 // remain alive
+                    continue;                   // go next cell
+                }
+            }                                   // endif alive
+                die(arr[i][j],i,j);             // else die
         }
     }
+
+
         for(int i = 0;i < 11;i++){
         for(int j = 0; j < 11;j++){
-        arr[i][j] = arr1[i][j];
+        arr[i][j] = arr1[i][j];             // copy arr1 to arr
         }
     }
-    print(arr);        
+                print(arr);        
 
     return 0;
 }
