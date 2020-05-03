@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 struct arena
 {
@@ -29,34 +30,21 @@ struct arena *initialize(int width, int height)
 
 void printTable(struct arena *ar)
 {
-    printf("-");
-    for (int j = 0; j < ar->width; j++)
-    {
-        printf("----");
-    }
-    printf("\n");
+    sleep(1);
     for (int i = 0; i < ar->height; i++)
     {
-        printf("| ");
+        printf("\033[%d;4H", i + 3);
         for (int j = 0; j < ar->width; j++)
         {
             if (ar->table[i][j] == 1)
             {
-                printf("X");
+                printf("\033[40m  ");
             }
             else
             {
-                printf(" ");
+                printf("\033[41m  ");
             }
-            printf(" | ");
         }
-        printf("\n");
-        printf("-");
-        for (int j = 0; j < ar->width; j++)
-        {
-            printf("----");
-        }
-
         printf("\n");
     }
 }
@@ -118,7 +106,7 @@ char isEmpty(struct arena *ar)
     {
         for (int j = 0; j < ar->width; j++)
         {
-            if(ar->table[i][j] == 1)
+            if (ar->table[i][j] == 1)
                 return 0;
         }
     }
@@ -127,8 +115,7 @@ char isEmpty(struct arena *ar)
 
 int main(int argc, char const *argv[])
 {
-    printf("-----------------------------------\n");
-    printf("Please enter the size of the board\n");
+    printf("Enter the size of the board\n");
     printf("Width: ");
     int w = 0;
     scanf("%d", &w);
@@ -137,10 +124,10 @@ int main(int argc, char const *argv[])
     scanf("%d", &h);
     struct arena *ar = initialize(w, h);
     int n = 0;
-    printf("Please enter the number of starting points: ");
+    printf("Enter the number of starting points: ");
     scanf("%d", &n);
     int start[n][2];
-    printf("Please enter the starting points\n");
+    printf("Enter the starting points\n");
     for (int i = 0; i < n; i++)
     {
         printf("Point #%d\n", i + 1);
@@ -153,14 +140,19 @@ int main(int argc, char const *argv[])
     {
         ar->table[start[i][1] - 1][start[i][0] - 1] = 1;
     }
+    printf("\033[2J");
+
+    // hide cursor
+    printf("\033[?25l");
     printTable(ar);
     int c = 0;
     while (!isEmpty(ar) && c < 50)
     {
         ar = modify(ar);
         printTable(ar);
-        printf("\n----------------------------------------------------\n\n");
         c++;
     }
+    printf("\033[?25h");
+    printf("\033[0m");
     return 0;
 }
