@@ -1,0 +1,6 @@
+/home/rasad2k/Documents/Dev Tech/build/CMakeFiles/rebuild_cache.dir
+/home/rasad2k/Documents/Dev Tech/build/CMakeFiles/GameOfLife.dir
+/home/rasad2k/Documents/Dev Tech/build/CMakeFiles/edit_cache.dir
+/home/rasad2k/Documents/Dev Tech/build/mylib/CMakeFiles/rebuild_cache.dir
+/home/rasad2k/Documents/Dev Tech/build/mylib/CMakeFiles/mylib.dir
+/home/rasad2k/Documents/Dev Tech/build/mylib/CMakeFiles/edit_cache.dir

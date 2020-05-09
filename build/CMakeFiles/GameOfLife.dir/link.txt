@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/GameOfLife.dir/game.c.o  -o GameOfLife  mylib/libmylib.a 
