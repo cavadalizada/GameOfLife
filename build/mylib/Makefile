@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /snap/cmake/340/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E rm -f
+RM = /snap/cmake/340/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/rasad2k/Documents/Dev Tech"
+CMAKE_SOURCE_DIR = /home/rasad2k/Documents/DevTech/GameOfLife
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/rasad2k/Documents/Dev Tech/build"
+CMAKE_BINARY_DIR = /home/rasad2k/Documents/DevTech/GameOfLife/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = "/home/rasad2k/Documents/Dev Tech/build"
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/340/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,8 +89,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/snap/cmake/340/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -100,14 +100,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/rasad2k/Documents/Dev Tech/build/CMakeFiles" "/home/rasad2k/Documents/Dev Tech/build/mylib/CMakeFiles/progress.marks"
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/rasad2k/Documents/Dev Tech/build/CMakeFiles" 0
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/rasad2k/Documents/DevTech/GameOfLife/build/CMakeFiles /home/rasad2k/Documents/DevTech/GameOfLife/build/mylib/CMakeFiles/progress.marks
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rasad2k/Documents/DevTech/GameOfLife/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/clean
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,22 +117,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/preinstall
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/preinstall
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 mylib/CMakeFiles/mylib.dir/rule:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/CMakeFiles/mylib.dir/rule
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mylib/CMakeFiles/mylib.dir/rule
 .PHONY : mylib/CMakeFiles/mylib.dir/rule
 
 # Convenience name for target.
@@ -142,7 +142,7 @@ mylib: mylib/CMakeFiles/mylib.dir/rule
 
 # fast build rule for target.
 mylib/fast:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f mylib/CMakeFiles/mylib.dir/build.make mylib/CMakeFiles/mylib.dir/build
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f mylib/CMakeFiles/mylib.dir/build.make mylib/CMakeFiles/mylib.dir/build
 .PHONY : mylib/fast
 
 board.o: board.c.o
@@ -151,7 +151,7 @@ board.o: board.c.o
 
 # target to build an object file
 board.c.o:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f mylib/CMakeFiles/mylib.dir/build.make mylib/CMakeFiles/mylib.dir/board.c.o
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f mylib/CMakeFiles/mylib.dir/build.make mylib/CMakeFiles/mylib.dir/board.c.o
 .PHONY : board.c.o
 
 board.i: board.c.i
@@ -160,7 +160,7 @@ board.i: board.c.i
 
 # target to preprocess a source file
 board.c.i:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f mylib/CMakeFiles/mylib.dir/build.make mylib/CMakeFiles/mylib.dir/board.c.i
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f mylib/CMakeFiles/mylib.dir/build.make mylib/CMakeFiles/mylib.dir/board.c.i
 .PHONY : board.c.i
 
 board.s: board.c.s
@@ -169,7 +169,7 @@ board.s: board.c.s
 
 # target to generate assembly for a file
 board.c.s:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(MAKE) $(MAKESILENT) -f mylib/CMakeFiles/mylib.dir/build.make mylib/CMakeFiles/mylib.dir/board.c.s
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(MAKE) $(MAKESILENT) -f mylib/CMakeFiles/mylib.dir/build.make mylib/CMakeFiles/mylib.dir/board.c.s
 .PHONY : board.c.s
 
 # Help Target
@@ -195,6 +195,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/rasad2k/Documents/Dev Tech/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/rasad2k/Documents/DevTech/GameOfLife/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

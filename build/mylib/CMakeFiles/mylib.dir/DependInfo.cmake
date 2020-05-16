@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/rasad2k/Documents/Dev Tech/mylib/board.c" "/home/rasad2k/Documents/Dev Tech/build/mylib/CMakeFiles/mylib.dir/board.c.o"
+  "/home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.c" "/home/rasad2k/Documents/DevTech/GameOfLife/build/mylib/CMakeFiles/mylib.dir/board.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

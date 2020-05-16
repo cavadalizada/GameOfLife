@@ -13,10 +13,12 @@ void printBoard(struct arena *ar);               //print the board
 
 //check how many alive neighnour a cell has
 //returns 1 if it has 3, 2 if it has 2 and 0 if it's neither 2 or 3
-char checkNeighbour(struct arena *ar, int posX, int posY);
+char checkNeighbourClipped(struct arena *ar, int posX, int posY);
+char checkNeighbourCircular(struct arena *ar, int posX, int posY);
+
 
 //modifies the board for time t+1 according to the board passed at time t
-struct arena *modify(struct arena *ar);
+struct arena *modify(struct arena *ar, int opt);
 
 //checks if the board has any alive cells
 //return 0 it it has any alive cell, 1 elsewise

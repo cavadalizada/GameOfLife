@@ -35,6 +35,17 @@ int main(int argc, char const *argv[])
     {
         ar->board[start[i][1] - 1][start[i][0] - 1] = 1;
     }
+    printf("Enter the option, 0 for 'Circular' and 1 for 'Clipped'\n");
+    int opt;
+    scanf("%d", &opt);
+
+    if (opt != 0 && opt != 1)
+    {
+        printf("Please enter the one of options correctly!\n");
+        return 0;
+    }
+    
+
     //clearing the terminal
     printf("\033[2J");
 
@@ -48,7 +59,7 @@ int main(int argc, char const *argv[])
     int c = 0;
     while (!isEmpty(ar) && c < 50)
     {
-        ar = modify(ar);
+        ar = modify(ar, opt);
         printBoard(ar);
         c++;
     }

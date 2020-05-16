@@ -46,8 +46,8 @@ void printBoard(struct arena *ar)
     }
 }
 
-//checks the neighbours of a cell in given position
-char checkNeighbour(struct arena *ar, int posX, int posY)
+//checks the neighbours of a cell in given position and clipped condition
+char checkNeighbourClipped(struct arena *ar, int posX, int posY)
 {
     int counter = 0;
     if ((posX - 1) >= 0 && ar->board[posY][posX - 1] == 1)
@@ -73,9 +73,36 @@ char checkNeighbour(struct arena *ar, int posX, int posY)
 
     return 0;
 }
+//checks the neighbours of a cell in given position and clipped condition
+char checkNeighbourCircular(struct arena *ar, int posX, int posY)
+{
+    int counter = 0;
+    if (ar->board[posY][(posX - 1 + ar->width) % ar->width] == 1)
+        counter++;
+    if (ar->board[(posY - 1 + ar->height) % ar->height][posX] == 1)
+        counter++;
+    if (ar->board[(posY - 1 + ar->height) % ar->height][(posX - 1 + ar->width) % ar->width] == 1)
+        counter++;
+    if (ar->board[posY][(posX + 1) % ar->width] == 1)
+        counter++;
+    if (ar->board[(posY + 1) % ar->height][posX] == 1)
+        counter++;
+    if (ar->board[(posY + 1) % ar->height][(posX + 1) % ar->width] == 1)
+        counter++;
+    if (ar->board[(posY + 1) % ar->height][(posX - 1 + ar->width) % ar->width] == 1)
+        counter++;
+    if (ar->board[(posY - 1 + ar->height) % ar->height][(posX + 1) % ar->width] == 1)
+        counter++;
+    if (counter == 3)
+        return 1;
+    if (counter == 2)
+        return 2;
+
+    return 0;
+}
 
 //modifies the board for time t+1 according to the board at time t
-struct arena *modify(struct arena *ar)
+struct arena *modify(struct arena *ar, int opt)
 {
     struct arena *copy = initialize(ar->width, ar->height);
     char cond = 0;
@@ -83,7 +110,15 @@ struct arena *modify(struct arena *ar)
     {
         for (int j = 0; j < ar->width; j++)
         {
-            cond = checkNeighbour(ar, j, i);
+            if (opt == 1)
+            {
+                cond = checkNeighbourClipped(ar, j, i);
+            }
+            else
+            {
+                cond = checkNeighbourCircular(ar, j, i);
+            }
+
             if (cond == 1)
             {
                 //if a cell has 3 neighbours

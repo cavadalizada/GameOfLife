@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/rasad2k/Documents/DevTech/GameOfLife/build",
+  "command": "/bin/c99-gcc   -g   -o CMakeFiles/GameOfLife.dir/game.c.o   -c /home/rasad2k/Documents/DevTech/GameOfLife/game.c",
+  "file": "/home/rasad2k/Documents/DevTech/GameOfLife/game.c"
+},
+{
+  "directory": "/home/rasad2k/Documents/DevTech/GameOfLife/build/mylib",
+  "command": "/bin/c99-gcc   -g   -o CMakeFiles/mylib.dir/board.c.o   -c /home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.c",
+  "file": "/home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.c"
+}
+]

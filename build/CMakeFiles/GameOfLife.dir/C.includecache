@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/rasad2k/Documents/Dev Tech/game.c
+/home/rasad2k/Documents/DevTech/GameOfLife/game.c
 mylib/board.h
-/home/rasad2k/Documents/Dev Tech/mylib/board.h
+/home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.h
 
-/home/rasad2k/Documents/Dev Tech/mylib/board.h
+/home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.h
 stdio.h
 -
 stdlib.h
