@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.c
+board.h
+/home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.h
+
+/home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.h
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+
+/home/rasad2k/Documents/DevTech/GameOfLife/test.c
+mylib/board.c
+/home/rasad2k/Documents/DevTech/GameOfLife/mylib/board.c
+stdio.h
+-
+CUnit/Basic.h
+-
+CUnit/Console.h
+-
+CUnit/CUnit.h
+-
+

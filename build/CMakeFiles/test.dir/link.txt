@@ -1,0 +1,1 @@
+/bin/c99-gcc -g  -rdynamic CMakeFiles/test.dir/test.c.o  -o test  mylib/libmylib.a -lcunit 

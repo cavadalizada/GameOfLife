@@ -18,7 +18,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						2
 					]
 				},
 				{
@@ -49,7 +50,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -58,7 +60,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "GameOfLife::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GameOfLife-Debug-f03025f8313b48f2849a.json",
+					"jsonFile" : "target-GameOfLife-Debug-d1819388e5ec3dfed9c3.json",
 					"name" : "GameOfLife",
 					"projectIndex" : 0
 				},
@@ -67,6 +69,13 @@
 					"id" : "mylib::@dfa37860ca8938dd2adf",
 					"jsonFile" : "target-mylib-Debug-3ca8dac999d160cf04af.json",
 					"name" : "mylib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-c3d7cc78926a3ddc95a3.json",
+					"name" : "test",
 					"projectIndex" : 0
 				}
 			]
